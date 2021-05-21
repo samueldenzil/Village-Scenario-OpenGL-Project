@@ -411,6 +411,156 @@ void house3()
 	glEnd();
 }
 
+void Boat()
+{
+	glColor3f(0.000f, 0.000f, 0.502f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.78, -0.89);
+	glVertex2f(-0.84, -0.76);
+	glVertex2f(-0.40, -0.76);
+	glVertex2f(-0.46, -0.89);
+	glEnd();
+
+	glColor3f(0.698f, 0.133f, 0.133f);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.62, -0.75);
+	glVertex2f(-0.88, -0.75);
+	glVertex2f(-0.62, -0.56);
+	glEnd();
+
+	glColor3f(0.184f, 0.310f, 0.310f);
+	glLineWidth(10);
+	glBegin(GL_LINES);
+	glVertex2f(-0.54, -0.76);
+	glVertex2f(-0.54, -0.56);
+	glEnd();
+
+	glColor3f(0.194f, 0.310f, 0.310f);
+	glLineWidth(10);
+	glBegin(GL_LINES);
+	glVertex2f(-0.58, -0.76);
+	glVertex2f(-0.58, -0.56);
+	glEnd();
+}
+
+void Display()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glColor3d(1, 0, 0);
+	// reset the drawing perspective
+	glLoadIdentity();
+	glMatrixMode(GL_MODELVIEW);
+
+	Tree1();
+	Tree2();
+	Tree3();
+	Tree4();
+	Tree5();
+	Tree6();
+	house1();
+	house2();
+	house3();
+	hill();
+	field();
+
+	// moving boat
+	glPushMatrix();
+	glTranslatef(boat_move, 0.0, 0.0);
+	Boat();
+	glPopMatrix();
+	boat_move += 0.005;
+	boat_move += 0.005;
+
+	if (boat_move > 1.9)
+	{
+		boat_move = -1.0;
+	}
+
+	// moving clouds
+	glPushMatrix();
+	glTranslatef(cloud_move, 0.0, 0.0);
+	Cloud1();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(cloud_move1, 0.0, 0.0);
+	Cloud2();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(cloud_move2, 0.0, 0.0);
+	Cloud3();
+	glPopMatrix();
+
+	cloud_move += 0.003;
+	if (cloud_move > 1.9)
+	{
+		cloud_move = -1.0;
+	}
+
+	cloud_move1 += 0.003;
+	if (cloud_move1 > 1.0)
+	{
+		cloud_move1 = -1.7;
+	}
+
+	cloud_move2 += 0.003;
+	if (cloud_move2 > 1.5)
+	{
+		cloud_move = -1.2;
+	}
+
+	// sum move
+	glPushMatrix();
+	glTranslatef(0.0, sun_move, 0.0);
+	Sun();
+	glPopMatrix();
+
+	if (start3 == true)
+	{
+		Moon();
+	}
+
+	if (start1 == true)
+	{
+		sun_move -= 0.005;
+		if (sun_move < -0.67)
+		{
+			glDisable(GL_LIGHT0);
+			start1 = false;
+			start3 = true;
+		}
+	}
+
+	// sun shine key
+	if (start2 == true)
+	{
+		start3 = false;
+		glEnable(GL_LIGHT0);
+		sun_move += 0.005;
+		if (sun_move > 0.30)
+		{
+			glEnable(GL_LIGHT0);
+		}
+		if (sun_move > 0)
+		{
+			start2 = false;
+		}
+	}
+	sky();
+	river();
+	glutSwapBuffers();
+}
+
+void update(int value)
+{
+	// tell GLUT that the display has changed
+	glutPostRedisplay();
+
+	// tell GLUT to call update again in 25 milliseconds
+	glutTimerFunc(25, update, 0);
+}
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
