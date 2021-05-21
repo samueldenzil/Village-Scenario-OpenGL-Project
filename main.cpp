@@ -86,6 +86,41 @@ void drawCircle(float x, float y, double r )
     glEnd();
 }
 
+void sky()
+{
+	glColor3f(0.118f, 0.565f, 1.000f);
+	glBegin(GL_QUADS);
+	glVertex2f(-1.0, 0.2);
+	glVertex2f(-1.0, 1.0);
+	glVertex2f(1.0, 1.0);
+	glVertex2f(1.0, 0.2);
+	glEnd();
+}
+
+void river()
+{
+	glColor3f(0.255f, 0.412f, 0.882f);
+	glBegin(GL_QUADS);
+	glVertex2f(-1.0, -1.0);
+	glVertex2f(-1.0, -0.5);
+	glVertex2f(1.0, -0.1);
+	glVertex2f(1.0, -1.0);
+	glEnd();
+}
+
+void field()
+{
+	glColor3f(0.420f, 0.557f, 0.137f);
+	glBegin(GL_QUADS);
+	glVertex2f(-1.0, 0.2);
+	glVertex2f(-1.0, -0.5);
+	glVertex2f(1.0, -0.1);
+	glVertex2f(1.0, 0.2);
+	glEnd();
+}
+
+/*************************Hill Function*************************/
+
 void Sun()
 {
 	glColor3f(1.000, 0.843, 0.000);
