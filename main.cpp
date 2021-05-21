@@ -17,6 +17,75 @@ void myInit()
 	glEnable(GL_COLOR_MATERIAL); //lets us use the glcolor3f//
 }
 
+void handleResize(int w, int h) {
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(45.0, (double)w / (double)h, 1.0, 200.0);
+}
+
+float sum_move =0.0f;
+float cloud_move =0.0f;
+float cloud_move1 =0.0f;
+float cloud_move2 =0.0f;
+float boat_move =0.0f;
+
+bool start1 = false;
+bool start2 = false;
+bool start3 = false;
+
+void keyboard(unsigned char key, int x,int y)
+{
+    switch (key)
+    {
+        case 'n':start1 = true; break; //sun set//
+        case 'd':start2 = true; break;//sun rise//
+    }
+}
+
+void circle(float x, float y, double r )
+{
+    float x1,y1;
+    glBegin(GL_POLYGON);
+    for(int i=0;i<200;i++)
+    {
+        float pi=3.1416;
+        float A=(i*2pi)/25;
+        float x1 = x+((r-.07) * cos(A) );
+        float y1 = y+ ((r) * sin(A) );
+        glVertex2f(x1,y1);
+    }
+    glEnd();
+}
+void drawcircle(float x, float y, double r )
+{
+    float x1,y1;
+    glBegin(GL_POLYGON);
+    for(int i=0;i<200;i++)
+    {
+        float pi=3.1416;
+        float A=(i*2*pi)/25;
+        float x1 = x+((r-.09) * cos(A) );
+        float y1 = y+((r) * sin(A) );
+        glVertex2f(x1,y1);
+    }
+    glEnd();
+}
+void drawCircle(float x, float y, double r )
+{
+    float x1,y1;
+    glBegin(GL_POLYGON);
+    for(int i=0;i<200;i++)
+    {
+        float pi=3.1416;
+        float A=(i*2*pi)/25;
+        float x1 =x+((r-.03) * cos(A) );
+        float y1 = y+((r) * sin(A) );
+        glVertex2f(x1,y1);
+    }
+    glEnd();
+}
+
 void Sun()
 {
 	glColor3f(1.000, 0.843, 0.000);
