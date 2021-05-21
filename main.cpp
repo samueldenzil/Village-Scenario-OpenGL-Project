@@ -119,7 +119,53 @@ void field()
 	glEnd();
 }
 
-/*************************Hill Function*************************/
+void hill()
+{
+	glColor3f(0.627, 0.322, 0.176);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.20, 0.20);
+	glVertex2f(0.03, 0.50);
+	glVertex2f(0.20, 0.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.05, 0.20);
+	glVertex2f(-0.38, 0.45);
+	glVertex2f(-0.60, 0.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.90, 0.20);
+	glVertex2f(-0.65, 0.38);
+	glVertex2f(-0.50, 0.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(-1.30, 0.20);
+	glVertex2f(-0.98, 0.35);
+	glVertex2f(-0.90, 0.40);
+	glVertex2f(-0.75, 0.20);
+	glVertex2f(-0.75, 0.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(0.56, 0.20);
+	glVertex2f(0.38, 0.45);
+	glVertex2f(0.10, 0.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(0.82, 0.20);
+	glVertex2f(0.67, 0.40);
+	glVertex2f(0.43, 0.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(1.30, 0.20);
+	glVertex2f(0.89, 0.40);
+	glVertex2f(0.71, 0.20);
+	glEnd();
+}
 
 void Sun()
 {
