@@ -198,6 +198,150 @@ void Tree6()
 	glEnd();
 }
 
+void house1()
+{
+	// roof
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.85, -0.04);
+	glVertex2f(-0.91, 0.10);
+	glVertex2f(-0.63, 0.10);
+	glVertex2f(-0.59, -0.04);
+	glEnd();
+
+	// window 1
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.89, -0.08);
+	glVertex2f(-0.89, 0.20);
+	glVertex2f(-0.63, 0.10);
+	glVertex2f(-0.59, -0.04);
+	glEnd();
+
+	// door
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.81, -0.09);
+	glVertex2f(-0.81, -0.32);
+	glVertex2f(-0.73, -0.32);
+	glVertex2f(-0.73, -0.09);
+	glEnd();
+
+	// window 3
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.72, -0.08);
+	glVertex2f(-0.72, -0.20);
+	glVertex2f(-0.65, -0.20);
+	glVertex2f(-0.65, -0.08);
+	glEnd();
+
+	// window 2
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.91, -0.32);
+	glVertex2f(-0.91, -0.04);
+	glVertex2f(-0.63, -0.04);
+	glVertex2f(-0.63, -0.32);
+	glEnd();
+}
+
+void house2()
+{
+	// roof
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(0.15, 0.12);
+	glVertex2f(0.19, 0.26);
+	glVertex2f(0.47, 0.26);
+	glVertex2f(0.51, 0.12);
+	glEnd();
+
+	// window 1
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(0.20, -0.01);
+	glVertex2f(0.20, 0.10);
+	glVertex2f(0.27, 0.10);
+	glVertex2f(0.27, -0.01);
+	glEnd();
+
+	// window 2
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(0.39, -0.01);
+	glVertex2f(0.39, 0.10);
+	glVertex2f(0.46, 0.10);
+	glVertex2f(0.46, -0.01);
+	glEnd();
+
+	// door
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(0.29, -0.20);
+	glVertex2f(0.29, 0.10);
+	glVertex2f(0.37, 0.10);
+	glVertex2f(0.37, -0.20);
+	glEnd();
+
+	// window 3
+	glColor3f(0.0f, 0.65f, 0.42f);
+	glBegin(GL_QUADS);
+	glVertex2f(0.19, -0.20);
+	glVertex2f(0.19, 0.12);
+	glVertex2f(0.47, 0.12);
+	glVertex2f(0.47, -0.20);
+	glEnd();
+}
+
+void house3()
+{
+	// roof
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.70, 0.10);
+	glVertex2f(-.66, 0.24);
+	glVertex2f(-0.38, 0.24);
+	glVertex2f(-0.34, 0.10);
+	glEnd();
+
+	// window 1
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.64, 0.8);
+	glVertex2f(-0.64, -0.04);
+	glVertex2f(-0.58, -0.04);
+	glVertex2f(-0.58, 0.08);
+	glEnd();
+
+	// door
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.27, 0.07);
+	glVertex2f(-0.57, -0.18);
+	glVertex2f(-0.48, -0.18);
+	glVertex2f(-0.48, 0.07);
+	glEnd();
+
+	// window 3
+	glColor3f(0.0f, 0.31f, 0.31f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.47, 0.08);
+	glVertex2f(-0.47, -0.04);
+	glVertex2f(-0.40, -0.04);
+	glVertex2f(-0.40, 0.08);
+	glEnd();
+
+	// window 2
+	glColor3f(0.7f, 0.14f, 0.0f);
+	glBegin(GL_QUADS);
+	glVertex2f(-0.38, -0.18);
+	glVertex2f(-0.38, 0.10);
+	glVertex2f(-0.66, 0.10);
+	glVertex2f(-0.66, -0.18);
+	glEnd();
+}
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
