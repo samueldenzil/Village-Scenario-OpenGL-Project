@@ -118,6 +118,86 @@ void Tree2()
 	glEnd();
 }
 
+void Tree3()
+{
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glLineWidth(7);
+	glBegin(GL_LINES);
+	glVertex2f(0.92, 0.0);
+	glVertex2f(0.92, 0.11);
+	glEnd();
+
+	glColor3f(0.0f, 0.43f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(0.98, 0.10);
+	glVertex2f(0.92, 0.50);
+	glVertex2f(0.86, 0.10);
+	glEnd();
+}
+
+void Tree4()
+{
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glLineWidth(7);
+	glBegin(GL_LINES);
+	glVertex2f(0.74, 0.0);
+	glVertex2f(0.74, 0.11);
+	glEnd();
+
+	glColor3f(0.0f, 0.43f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(0.80, 0.10);
+	glVertex2f(0.74, 0.50);
+	glVertex2f(0.68, 0.10);
+	glEnd();
+}
+
+void Tree5()
+{
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glLineWidth(7);
+	glBegin(GL_LINES);
+	glVertex2f(0.56, 0.0);
+	glVertex2f(0.56, 0.11);
+	glEnd();
+
+	glColor3f(0.0f, 0.43f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(0.61, 0.10);
+	glVertex2f(0.56, 0.50);
+	glVertex2f(0.50, 0.10);
+	glEnd();
+}
+
+void Tree6()
+{
+	glColor3f(0.38f, 0.19f, 0.0f);
+	glLineWidth(7);
+	glBegin(GL_LINES);
+	glVertex2f(-0.46, -0.30);
+	glVertex2f(-0.46, -0.20);
+	glEnd();
+
+	glColor3f(0.0f, 0.43f, 0.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.52, -0.22);
+	glVertex2f(-0.46, 0.00);
+	glVertex2f(-0.40, -0.22);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.52, -0.17);
+	glVertex2f(-0.6, 0.00);
+	glVertex2f(-0.40, -0.17);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.52, -0.12);
+	glVertex2f(-0.46, 0.40);
+	glVertex2f(-0.40, -0.12);
+	glEnd();
+}
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
