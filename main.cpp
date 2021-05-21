@@ -24,7 +24,7 @@ void handleResize(int w, int h) {
     gluPerspective(45.0, (double)w / (double)h, 1.0, 200.0);
 }
 
-float sum_move =0.0f;
+float sun_move =0.0f;
 float cloud_move =0.0f;
 float cloud_move1 =0.0f;
 float cloud_move2 =0.0f;
@@ -50,7 +50,7 @@ void circle(float x, float y, double r )
     for(int i=0;i<200;i++)
     {
         float pi=3.1416;
-        float A=(i*2pi)/25;
+        float A=(i*2*pi)/25;
         float x1 = x+((r-.07) * cos(A) );
         float y1 = y+ ((r) * sin(A) );
         glVertex2f(x1,y1);
