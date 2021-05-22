@@ -1,1 +1,1 @@
-# CG-Project
+# Village-Scenario-OpenGL-Project 
