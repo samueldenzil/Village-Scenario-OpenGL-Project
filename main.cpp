@@ -604,7 +604,7 @@ void Display()
 		cloud_move = -1.2;
 	}
 
-	// sum move
+	// moving sun
 	glPushMatrix();
 	glTranslatef(0.0, sun_move, 0.0);
 	Sun();
