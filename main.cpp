@@ -44,10 +44,10 @@ void keyboard(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
-	case 'n':	// sun rise
+	case 'n':	// Sunset
 		start1 = true;
 		break;
-	case 'd': 	// sun set
+	case 'd': 	// Sunrise
 		start2 = true;
 		break;
 	}
@@ -446,7 +446,7 @@ void house2()
 	glVertex2f(0.37, -0.20);
 	glEnd();
 
-	// window 3
+	// wall
 	glColor3f(0.0f, 0.65f, 0.42f);
 	glBegin(GL_QUADS);
 	glVertex2f(0.19, -0.20);
@@ -485,7 +485,7 @@ void house3()
 	glVertex2f(-0.48, 0.07);
 	glEnd();
 
-	// window 3		error
+	// window 2
 	glColor3f(0.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.47, 0.08);
@@ -494,9 +494,8 @@ void house3()
 	glVertex2f(-0.40, 0.08);
 	glEnd();
 
-	// window 2
+	// wall
 	glColor3f(0.7f, 0.14f, 0.0f);
-	// glBegin(GL_QUADS);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.38, -0.18);
 	glVertex2f(-0.38, 0.10);
@@ -545,12 +544,12 @@ void Display()
 	glLoadIdentity();
 	glMatrixMode(GL_MODELVIEW);
 
-	Tree1();	// two from left
-	Tree2();	// three from left
+	Tree1();
+	Tree2();
 	Tree3();
 	Tree4();
 	Tree5();
-	Tree6();	//
+	Tree6();
 	house1();
 	house2();
 	house3();
