@@ -1,3 +1,8 @@
+// FirstName Surname
+// Class: SE IT		Rollno.
+// Computer Graphics Project: Village Scenario
+// Group 7
+
 #include <iostream>
 #include <stdlib.h>
 #include <GL/gl.h>
@@ -17,7 +22,8 @@ void myInit()
 	glEnable(GL_COLOR_MATERIAL); //lets us use the glcolor3f//
 }
 
-void handleResize(int w, int h) {
+void handleResize(int w, int h)
+{
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -38,8 +44,12 @@ void keyboard(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
-	case 'n': start1 = true; break; //sun set//
-	case 'd': start2 = true; break; //sun rise//
+	case 'n':	// sun rise
+		start1 = true;
+		break;
+	case 'd': 	// sun set
+		start2 = true;
+		break;
 	}
 }
 
@@ -51,12 +61,13 @@ void circle(float x, float y, double r )
 	{
 		float pi = 3.1416;
 		float A = (i * 2 * pi) / 25;
-		float x1 = x + ((r - .07) * cos(A) );
+		float x1 = x + ((r - 0.07) * cos(A) );
 		float y1 = y + ((r) * sin(A) );
 		glVertex2f(x1, y1);
 	}
 	glEnd();
 }
+
 void drawcircle(float x, float y, double r )
 {
 	float x1, y1;
@@ -65,12 +76,13 @@ void drawcircle(float x, float y, double r )
 	{
 		float pi = 3.1416;
 		float A = (i * 2 * pi) / 25;
-		float x1 = x + ((r - .09) * cos(A) );
+		float x1 = x + ((r - 0.09) * cos(A) );
 		float y1 = y + ((r) * sin(A) );
 		glVertex2f(x1, y1);
 	}
 	glEnd();
 }
+
 void drawCircle(float x, float y, double r )
 {
 	float x1, y1;
@@ -79,7 +91,7 @@ void drawCircle(float x, float y, double r )
 	{
 		float pi = 3.1416;
 		float A = (i * 2 * pi) / 25;
-		float x1 = x + ((r - .03) * cos(A) );
+		float x1 = x + ((r - 0.03) * cos(A) );
 		float y1 = y + ((r) * sin(A) );
 		glVertex2f(x1, y1);
 	}
@@ -177,13 +189,13 @@ void Moon()
 {
 	glPushMatrix();
 	glColor3f(1.0, 1.0, 1.0);
-	circle(0.75, 0.75, 0.10);
+	circle(0.75, 0.75, 0.18);
 	glPopMatrix();
 }
 
 void Cloud1()
 {
-	glColor3f(0.80, 0.80, 0.80);
+	glColor3f(0.80f, 0.80f, 0.80f);
 	circle(-0.85, 0.77, 0.15);
 	circle(-0.79, 0.70, 0.15);
 	circle(-0.70, 0.70, 0.15);
@@ -192,16 +204,16 @@ void Cloud1()
 
 void Cloud2()
 {
-	glColor3f(0.80, 0.80, 0.80);
+	glColor3f(0.80f, 0.80f, 0.80f);
 	drawcircle(0.35, 0.77, 0.15);
-	circle(-0.79, 0.70, 0.15);
+	circle(0.45, 0.70, 0.15);
 	drawcircle(0.55, 0.75, 0.15);
-	circle(-0.75, 0.77, 0.15);
+	circle(0.45, 0.77, 0.15);
 }
 
 void Cloud3()
 {
-	glColor3f(0.80, 0.80, 0.80);
+	glColor3f(0.80f, 0.80f, 0.80f);
 	circle(-0.07, 0.85, 0.15);
 	circle(-0.01, 0.80, 0.15);
 	circle(0.08, 0.83, 0.15);
@@ -243,8 +255,8 @@ void Tree2()
 	glColor3f(0.38f, 0.19f, 0.0f);
 	glBegin(GL_POLYGON);
 	glVertex2f(-0.05, -0.20);
-	glVertex2f(-0.05, -0.00);
-	glVertex2f(-0.07, -0.00);
+	glVertex2f(-0.05, 0.00);
+	glVertex2f(-0.07, 0.00);
 	glVertex2f(-0.07, -0.20);
 	glEnd();
 
@@ -252,7 +264,7 @@ void Tree2()
 	glBegin(GL_POLYGON);
 	glVertex2f(-0.18, 0.00);
 	glVertex2f(-0.06, 0.24);
-	glVertex2f(-0.06, 0.00);
+	glVertex2f(0.06, 0.00);
 	glEnd();
 
 	glBegin(GL_POLYGON);
@@ -337,7 +349,7 @@ void Tree6()
 
 	glBegin(GL_POLYGON);
 	glVertex2f(-0.52, -0.17);
-	glVertex2f(-0.6, 0.00);
+	glVertex2f(-0.46, 0.00);
 	glVertex2f(-0.40, -0.17);
 	glEnd();
 
@@ -353,7 +365,7 @@ void house1()
 	// roof
 	glColor3f(0.38f, 0.19f, 0.0f);
 	glBegin(GL_POLYGON);
-	glVertex2f(-0.85, -0.04);
+	glVertex2f(-0.95, -0.04);
 	glVertex2f(-0.91, 0.10);
 	glVertex2f(-0.63, 0.10);
 	glVertex2f(-0.59, -0.04);
@@ -363,9 +375,9 @@ void house1()
 	glColor3f(0.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.89, -0.08);
-	glVertex2f(-0.89, 0.20);
-	glVertex2f(-0.63, 0.10);
-	glVertex2f(-0.59, -0.04);
+	glVertex2f(-0.89, -0.20);
+	glVertex2f(-0.82, -0.20);
+	glVertex2f(-0.82, -0.08);
 	glEnd();
 
 	// door
@@ -377,7 +389,7 @@ void house1()
 	glVertex2f(-0.73, -0.09);
 	glEnd();
 
-	// window 3
+	// window 2
 	glColor3f(0.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.72, -0.08);
@@ -386,8 +398,8 @@ void house1()
 	glVertex2f(-0.65, -0.08);
 	glEnd();
 
-	// window 2
-	glColor3f(0.0f, 0.31f, 0.31f);
+	// wall
+	glColor3f(1.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.91, -0.32);
 	glVertex2f(-0.91, -0.04);
@@ -450,7 +462,7 @@ void house3()
 	glColor3f(0.38f, 0.19f, 0.0f);
 	glBegin(GL_POLYGON);
 	glVertex2f(-0.70, 0.10);
-	glVertex2f(-.66, 0.24);
+	glVertex2f(-0.66, 0.24);
 	glVertex2f(-0.38, 0.24);
 	glVertex2f(-0.34, 0.10);
 	glEnd();
@@ -458,7 +470,7 @@ void house3()
 	// window 1
 	glColor3f(0.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.64, 0.8);
+	glVertex2f(-0.64, 0.08);
 	glVertex2f(-0.64, -0.04);
 	glVertex2f(-0.58, -0.04);
 	glVertex2f(-0.58, 0.08);
@@ -467,13 +479,13 @@ void house3()
 	// door
 	glColor3f(0.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.27, 0.07);
+	glVertex2f(-0.57, 0.07);
 	glVertex2f(-0.57, -0.18);
 	glVertex2f(-0.48, -0.18);
 	glVertex2f(-0.48, 0.07);
 	glEnd();
 
-	// window 3
+	// window 3		error
 	glColor3f(0.0f, 0.31f, 0.31f);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.47, 0.08);
@@ -484,6 +496,7 @@ void house3()
 
 	// window 2
 	glColor3f(0.7f, 0.14f, 0.0f);
+	// glBegin(GL_QUADS);
 	glBegin(GL_QUADS);
 	glVertex2f(-0.38, -0.18);
 	glVertex2f(-0.38, 0.10);
@@ -532,12 +545,12 @@ void Display()
 	glLoadIdentity();
 	glMatrixMode(GL_MODELVIEW);
 
-	Tree1();
-	Tree2();
+	Tree1();	// two from left
+	Tree2();	// three from left
 	Tree3();
 	Tree4();
 	Tree5();
-	Tree6();
+	Tree6();	//
 	house1();
 	house2();
 	house3();
