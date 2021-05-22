@@ -11,79 +11,79 @@ using namespace std;
 void myInit()
 {
 	glEnable(GL_DEPTH_TEST);
-	gluOrtho2D(0,1600,0,800);
+	gluOrtho2D(0, 1600, 0, 800);
 	glEnable(GL_LIGHTING); //enable lightining//
 	glEnable(GL_LIGHT0); //enable light #0//
 	glEnable(GL_COLOR_MATERIAL); //lets us use the glcolor3f//
 }
 
 void handleResize(int w, int h) {
-    glViewport(0, 0, w, h);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(45.0, (double)w / (double)h, 1.0, 200.0);
+	glViewport(0, 0, w, h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45.0, (double)w / (double)h, 1.0, 200.0);
 }
 
-float sun_move =0.0f;
-float cloud_move =0.0f;
-float cloud_move1 =0.0f;
-float cloud_move2 =0.0f;
-float boat_move =0.0f;
+float sun_move = 0.0f;
+float cloud_move = 0.0f;
+float cloud_move1 = 0.0f;
+float cloud_move2 = 0.0f;
+float boat_move = 0.0f;
 
 bool start1 = false;
 bool start2 = false;
 bool start3 = false;
 
-void keyboard(unsigned char key, int x,int y)
+void keyboard(unsigned char key, int x, int y)
 {
-    switch (key)
-    {
-        case 'n':start1 = true; break; //sun set//
-        case 'd':start2 = true; break;//sun rise//
-    }
+	switch (key)
+	{
+	case 'n': start1 = true; break; //sun set//
+	case 'd': start2 = true; break; //sun rise//
+	}
 }
 
 void circle(float x, float y, double r )
 {
-    float x1,y1;
-    glBegin(GL_POLYGON);
-    for(int i=0;i<200;i++)
-    {
-        float pi=3.1416;
-        float A=(i*2*pi)/25;
-        float x1 = x+((r-.07) * cos(A) );
-        float y1 = y+ ((r) * sin(A) );
-        glVertex2f(x1,y1);
-    }
-    glEnd();
+	float x1, y1;
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 200; i++)
+	{
+		float pi = 3.1416;
+		float A = (i * 2 * pi) / 25;
+		float x1 = x + ((r - .07) * cos(A) );
+		float y1 = y + ((r) * sin(A) );
+		glVertex2f(x1, y1);
+	}
+	glEnd();
 }
 void drawcircle(float x, float y, double r )
 {
-    float x1,y1;
-    glBegin(GL_POLYGON);
-    for(int i=0;i<200;i++)
-    {
-        float pi=3.1416;
-        float A=(i*2*pi)/25;
-        float x1 = x+((r-.09) * cos(A) );
-        float y1 = y+((r) * sin(A) );
-        glVertex2f(x1,y1);
-    }
-    glEnd();
+	float x1, y1;
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 200; i++)
+	{
+		float pi = 3.1416;
+		float A = (i * 2 * pi) / 25;
+		float x1 = x + ((r - .09) * cos(A) );
+		float y1 = y + ((r) * sin(A) );
+		glVertex2f(x1, y1);
+	}
+	glEnd();
 }
 void drawCircle(float x, float y, double r )
 {
-    float x1,y1;
-    glBegin(GL_POLYGON);
-    for(int i=0;i<200;i++)
-    {
-        float pi=3.1416;
-        float A=(i*2*pi)/25;
-        float x1 =x+((r-.03) * cos(A) );
-        float y1 = y+((r) * sin(A) );
-        glVertex2f(x1,y1);
-    }
-    glEnd();
+	float x1, y1;
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 200; i++)
+	{
+		float pi = 3.1416;
+		float A = (i * 2 * pi) / 25;
+		float x1 = x + ((r - .03) * cos(A) );
+		float y1 = y + ((r) * sin(A) );
+		glVertex2f(x1, y1);
+	}
+	glEnd();
 }
 
 void sky()
@@ -533,14 +533,14 @@ void Display()
 	glMatrixMode(GL_MODELVIEW);
 
 	Tree1();
-	Tree2();
+	// Tree2();		// error
 	Tree3();
 	Tree4();
 	Tree5();
-	Tree6();
-	house1();
+	// Tree6();		// error
+	// house1();	// error
 	house2();
-	house3();
+	// house3();	// error
 	hill();
 	field();
 
@@ -560,17 +560,17 @@ void Display()
 	// moving clouds
 	glPushMatrix();
 	glTranslatef(cloud_move, 0.0, 0.0);
-	Cloud1();
+	Cloud1();	// error
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(cloud_move1, 0.0, 0.0);
-	Cloud2();
+	Cloud2();	// error
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(cloud_move2, 0.0, 0.0);
-	Cloud3();
+	Cloud3();	// error
 	glPopMatrix();
 
 	cloud_move += 0.003;
@@ -599,7 +599,7 @@ void Display()
 
 	if (start3 == true)
 	{
-		Moon();
+		Moon();	// error
 	}
 
 	if (start1 == true)
@@ -647,10 +647,10 @@ int main(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 700);
-	
+
 	glutCreateWindow("Group 7: Village Scenario");
 	myInit();
-	
+
 	glutDisplayFunc(Display);
 	glutReshapeFunc(handleResize);
 
